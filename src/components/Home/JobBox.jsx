@@ -9,21 +9,22 @@ const styles = {
   jobBoxTitle: `mb-2 text-2xl font-bold tracking-tight text-gray-600 dark:text-white`,
   jobBoxText: `mb-3 font-normal text-gray-700 dark:text-gray-200`,
   jobBoxFooterWrapper: `flex justify-between items-end`,
-  jobBoxButton: `inline-flex items-center px-3 py-2 text-sm font-medium text-blue-400 hover:text-blue-600 bg-gray-100 rounded-lg hover:bg-gray-100 dark:bg-white dark:hover:bg-gray-200`,
+  jobBoxButton: `inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`,
   jobBoxButtonIcon: `w-4 h-4 ml-2`,
   jobBoxTimeSpan: `inline-flex items-end rounded-full text-sm`,
   jobBoxBadge: `absolute inline-flex items-center justify-center w-auto h-6 px-2 text-xs font-bold text-white bg-red-500 border-default border-white rounded-full -top-3 right-3 dark:border-gray-600`
 }
 
-const JobBox = ({title, text, buttonText, timeSpan, isNew}) => {
+const JobBox = ({title, text, timeSpan, isNew}) => {
   return (
     <div className={styles.jobBoxWrapper}>
       <a href="">
-        <h5 className={styles.jobBoxTitle}>Software Engineer 🚀</h5>
+        <h5 className={styles.jobBoxTitle}>
+          {title ?? ""}
+        </h5>
       </a>
       <p className={styles.jobBoxText}>
-        Here are the biggest enterprise technology acquisitions of 2021 so far,
-        in reverse chronological order.
+        {text ? text.slice(0, 100) : ""}
       </p>
       <div className={styles.jobBoxFooterWrapper}>
         <a href="" className={styles.jobBoxButton}>
@@ -35,14 +36,15 @@ const JobBox = ({title, text, buttonText, timeSpan, isNew}) => {
         </a>
         <div className={styles.jobBoxTimeSpan}>
           <span>
-          3 hours ago
+          {timeSpan ?? ""}
           <FontAwesomeIcon icon={faBriefcaseClock} className="ml-3" />
           </span>
         </div>
       </div>
-      <div className={styles.jobBoxBadge}>
+      {isNew && <div className={styles.jobBoxBadge}>
         New
-      </div>
+      </div>}
+      
     </div>
   )
 }

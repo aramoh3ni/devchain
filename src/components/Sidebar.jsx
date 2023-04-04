@@ -1,5 +1,3 @@
-import CreateJobBox from "./Widgets/CreateJobBox"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPieChart, faInbox } from "@fortawesome/free-solid-svg-icons"
 
@@ -94,8 +92,6 @@ const Sidebar = () => {
           <span className={styles.sidebarLinkBadge}>4</span>
         </li>
       </ul>
-      <CreateJobBox />
-
     </div>
   )
 }
