@@ -1,6 +1,10 @@
+import JobBox from "../components/Home/JobBox"
+
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div>
+      <JobBox />
+    </div>
   )
 }
 
