@@ -23,11 +23,11 @@ const Sidebar = () => {
   }
 
   const items = [
-    { label: "Item 1", value: "item 1" },
-    { label: "Item 2", value: "item 2" },
-    { label: "Item 3", value: "item 3" },
-    { label: "Item 4", value: "item 4" },
-    { label: "Item 5", value: "item 5" },
+    { label: "Software Engineer", value: "software engineer" },
+    { label: "UX/UI Designer", value: "ux-ui" },
+    { label: "React Developer", value: "react-developer" },
+    { label: "Laravel Developer", value: "laravel-developer" },
+    { label: "Back-end Developer", value: "back-end-developer" },
   ]
 
   return (
@@ -36,6 +36,7 @@ const Sidebar = () => {
         {items.map(item => (
           <SidebarDropdownListItem
             key={item.label}
+            label={item.label}
             name={item.value}
             checked={checkedItems.includes(item.value)}
             onCheckBoxChange={handleCheck}

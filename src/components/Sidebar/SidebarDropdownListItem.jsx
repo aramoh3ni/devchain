@@ -5,7 +5,7 @@ const styles = {
   sidebarLinkText: `flex-1 ml-3 text-sm`,
  }
 
-const SidebarDropdownListItem = ({ name, checked, onCheckBoxChange}) => {
+const SidebarDropdownListItem = ({ label, name, checked, onCheckBoxChange}) => {
 
   return (
     <li className={styles.sidebarLink}>
@@ -18,7 +18,7 @@ const SidebarDropdownListItem = ({ name, checked, onCheckBoxChange}) => {
         onChange={(e) => onCheckBoxChange(e)}
       />
       <label htmlFor={name} className={styles.sidebarLinkText}>
-        {name ?? ""}
+        {label ?? ""}
       </label>
       <span className={styles.sidebarLinkBadge}>4</span>
     </li>
