@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faArrowRight,
@@ -16,13 +18,21 @@ const styles = {
 }
 
 const JobBox = ({title, text, timeSpan, isNew}) => {
+  // TODO:: create url path for title
+  // ? TEMP URL
+  // TODO:: create New Badge if job.publish is not more then 1 day.
+  // TODO:: create Expired Badge if job.deadline is outdate.
+  // TODO:: create Organization Logo that should at the top of JobBox Component
+  
+  const url = title.toLowerCase().replace(" ", "-")
+  
   return (
     <div className={styles.jobBoxWrapper}>
-      <a href="">
+      <Link to={`${url}`}>
         <h5 className={styles.jobBoxTitle}>
           {title ?? ""}
         </h5>
-      </a>
+      </Link>
       <p className={styles.jobBoxText}>
         {text ? text.slice(0, 100) : ""}
       </p>
