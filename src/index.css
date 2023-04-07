@@ -14,13 +14,14 @@ body {
 
 /* -------- SCROLLBAR DESIGN  --------*/
 *::-webkit-scrollbar {
-  width: 0.7em;
+  width: 0.3em;
   background-color: #373a3e;
-  border-radius: 10px;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #fff;
   border-radius: 10px;
+  cursor: pointer;
+
 }
 /* ------- END SCROLLBAR -------- */
