@@ -4,14 +4,13 @@ module.exports = {
   theme: {
     screens: {
       sm: "640px",
-      md: "768px",
+      md: "820px",
       lg: "1024px",
       xl: "1280px",
     },
     fontFamily: {
       display: ["Quicksand", "sans-serif"],
       body: ["Quicksand", "sans-serif"],
-      
     },
     borderWidth: {
       default: "1px",
@@ -35,9 +34,11 @@ module.exports = {
         silver: "rgba(167, 177, 191, 1)",
       },
       width: {
-        desktop: "840px",
-        tablet: "768px",
-        mobile: "640px",
+        xs: "30px",
+        sm: "24rem",
+        md: "34rem",
+        lg: "40rem",
+        xl: "44rem",
       },
       spacing: {
         96: "24rem",

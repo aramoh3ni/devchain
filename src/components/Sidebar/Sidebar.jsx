@@ -3,7 +3,7 @@ import SidebarDropdownList from "./SidebarDropdownList"
 import SidebarDropdownListItem from "./SidebarDropdownListItem"
 
 const styles = {
-  sidebarWrapper: `px-3 py-4 mb-90 select-none w-80 h-[93vh] overflow-y-auto`,
+  sidebarWrapper: `select-none overflow-y-auto`,
   sidebarLink: `w-full flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-secondary`,
   sidebarLinkIcon: `w-6 h-6 text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white`,
   sidebarLinkText: `flex-1 ml-3 text-sm`,
