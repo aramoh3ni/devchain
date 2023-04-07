@@ -9,6 +9,7 @@ const styles = {
   main: `bg-primary`,
   sidebarWrapper: `hidden md:block fixed top-0 left-0  w-80 min-h-screen pt-16 border-r-default border-gray-600`,
   contentWrapper: ` pt-20 px-4 pb-4 sm:ml-80 min-h-screen flex-auto`,
+  widgetWrapper: `hidden md:block flex-initial w-90 pt-20 px-4 min-h-screen border-l-default border-gray-600 `
 }
 
 const Layout = () => {
@@ -22,7 +23,7 @@ const Layout = () => {
         <div className={styles.contentWrapper}>
           <Outlet />
         </div>
-        <div className="hidden md:block flex-initial pt-20 px-4 min-h-screen border-l-default border-gray-600">
+        <div className={styles.widgetWrapper}>
           <CreateJobBox />
         </div>
       </div>
