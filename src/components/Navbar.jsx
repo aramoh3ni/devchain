@@ -8,7 +8,8 @@ import {
   faUserAlt,
   faGears,
   faPieChart,
-  faBars
+  faBars,
+  faHome
 } from "@fortawesome/free-solid-svg-icons"
 
 const styles = {
@@ -27,7 +28,7 @@ const Navbar = ({onSidebarChange}) => {
   return (
     <nav className={styles.navbarWrapper}>
       <div className={styles.navbarContainer}>
-        <div className="flex space-x-2">
+        <div className="flex items-center space-x-2">
           <button className="mr-4 px-3 rounded-full hover:bg-blue-600" onClick={onSidebarChange}>
             <FontAwesomeIcon icon={faBars} />
           </button>
@@ -35,18 +36,19 @@ const Navbar = ({onSidebarChange}) => {
             {/* <img src="_https/index.html" className={styles.navbarLogoImage} alt="Developers Chain Logo" /> */}
             <span className={styles.navbarLogoText}>Developers Chain</span>
           </NavLink>
+          <span className="px-2">|</span>
           <div className="hidden md:flex gap-2">
             <NavLink
               className={({ isActive }) =>
                 isActive ? styles.navbarLinkActive : `${styles.navbarLink}`
               }
-              to="dashboard"
+              to="/"
             >
               <FontAwesomeIcon
-                icon={faPieChart}
+                icon={faHome}
                 className={styles.navbarLinkIcon}
               />
-              Dashboard
+              Home
             </NavLink>
             <NavLink
               className={({ isActive }) =>
