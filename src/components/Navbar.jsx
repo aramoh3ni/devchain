@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 const styles = {
-  navbarWrapper: `fixed top-0 z-50 px-2 sm:px-4 py-2.5 w-full z-20 border-b-default border-gray-600 bg-primary`,
+  navbarWrapper: `fixed top-0 z-50 px-2 sm:px-4 py-2.5 w-full z-20 border-b-default border-hr bg-primary`,
   navbarContainer: `flex flex-wrap items-center justify-between mx-auto`,
   navbarLogoImage: `h-6 mr-3 sm:h-9`,
   navbarLogoText: `self-center text-xl font-semibold whitespace-nowrap dark:text-white`,

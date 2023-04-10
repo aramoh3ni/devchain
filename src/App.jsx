@@ -17,7 +17,7 @@ import ProfilePage from './Pages/ProfilePage'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route index path="/" element={<HomePage />} />
+      <Route index element={<HomePage />} />
       <Route path="jobs/:id" element={<JopPage />} />
       <Route path="me/:id" element={<ProfilePage />} />
       <Route path="about" element={<div>About Page</div>} />

@@ -25,6 +25,7 @@ module.exports = {
         lighter: "#373A3E",
         darker: "#16181d",
         active: "#373A3E",
+        hr: "#6c6c6c1c",
 
         white: "#fff",
         purple: "rgb(129, 21, 218)",
