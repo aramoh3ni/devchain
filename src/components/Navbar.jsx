@@ -4,12 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faBell,
   faSun,
-  faBars,
-  faSquare,
   faLayerGroup,
   faUserAlt,
   faGears,
   faPieChart,
+  faBars
 } from "@fortawesome/free-solid-svg-icons"
 
 const styles = {
@@ -24,12 +23,15 @@ const styles = {
   navbarLinkIcon: `mr-2`,
 }
 
-const Navbar = () => {
+const Navbar = ({onSidebarChange}) => {
   return (
     <nav className={styles.navbarWrapper}>
       <div className={styles.navbarContainer}>
         <div className="flex space-x-2">
-          <NavLink to="/" className="flex items-center mr-4">
+          <button className="mr-4 px-3 rounded-full hover:bg-blue-600" onClick={onSidebarChange}>
+            <FontAwesomeIcon icon={faBars} />
+          </button>
+          <NavLink to="/" className="flex items-center mr-12">
             {/* <img src="_https/index.html" className={styles.navbarLogoImage} alt="Developers Chain Logo" /> */}
             <span className={styles.navbarLogoText}>Developers Chain</span>
           </NavLink>

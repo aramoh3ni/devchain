@@ -42,6 +42,151 @@ createServer({
         "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
       company: "MCIT",
     })
+    server.create("job", {
+      _id: "1",
+      published: "3 hours ago",
+      deadline: "3-March-2023",
+      title: "React Developer",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "Tuts Tech",
+    })
+    server.create("job", {
+      _id: "2",
+      published: "1 day ago",
+      deadline: "3-March-2023",
+      title: "Software Engineer",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "Netlinks Co",
+    })
+    server.create("job", {
+      _id: "3",
+      published: "4 day ago",
+      deadline: "3-March-2023",
+      title: "UX/UI Designer",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "JFITSC.Co",
+    })
+    server.create("job", {
+      _id: "4",
+      published: "1 day ago",
+      deadline: "3-March-2023",
+      title: "Data Analysis",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "MCIT",
+    })
+    server.create("job", {
+      _id: "1",
+      published: "3 hours ago",
+      deadline: "3-March-2023",
+      title: "React Developer",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "Tuts Tech",
+    })
+    server.create("job", {
+      _id: "2",
+      published: "1 day ago",
+      deadline: "3-March-2023",
+      title: "Software Engineer",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "Netlinks Co",
+    })
+    server.create("job", {
+      _id: "3",
+      published: "4 day ago",
+      deadline: "3-March-2023",
+      title: "UX/UI Designer",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "JFITSC.Co",
+    })
+    server.create("job", {
+      _id: "4",
+      published: "1 day ago",
+      deadline: "3-March-2023",
+      title: "Data Analysis",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "MCIT",
+    })
+    server.create("job", {
+      _id: "1",
+      published: "3 hours ago",
+      deadline: "3-March-2023",
+      title: "React Developer",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "Tuts Tech",
+    })
+    server.create("job", {
+      _id: "2",
+      published: "1 day ago",
+      deadline: "3-March-2023",
+      title: "Software Engineer",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "Netlinks Co",
+    })
+    server.create("job", {
+      _id: "3",
+      published: "4 day ago",
+      deadline: "3-March-2023",
+      title: "UX/UI Designer",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "JFITSC.Co",
+    })
+    server.create("job", {
+      _id: "4",
+      published: "1 day ago",
+      deadline: "3-March-2023",
+      title: "Data Analysis",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "MCIT",
+    })
+    server.create("job", {
+      _id: "1",
+      published: "3 hours ago",
+      deadline: "3-March-2023",
+      title: "React Developer",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "Tuts Tech",
+    })
+    server.create("job", {
+      _id: "2",
+      published: "1 day ago",
+      deadline: "3-March-2023",
+      title: "Software Engineer",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "Netlinks Co",
+    })
+    server.create("job", {
+      _id: "3",
+      published: "4 day ago",
+      deadline: "3-March-2023",
+      title: "UX/UI Designer",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "JFITSC.Co",
+    })
+    server.create("job", {
+      _id: "4",
+      published: "1 day ago",
+      deadline: "3-March-2023",
+      title: "Data Analysis",
+      description:
+        "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
+      company: "MCIT",
+    })
+
   },
 
   routes() {
