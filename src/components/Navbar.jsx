@@ -54,7 +54,7 @@ const Navbar = ({onSidebarChange}) => {
               className={({ isActive }) =>
                 isActive ? styles.navbarLinkActive : `${styles.navbarLink}`
               }
-              to="collections"
+              to="jobs"
             >
               <FontAwesomeIcon
                 icon={faLayerGroup}
@@ -66,13 +66,13 @@ const Navbar = ({onSidebarChange}) => {
               className={({ isActive }) =>
                 isActive ? styles.navbarLinkActive : `${styles.navbarLink}`
               }
-              to="jobs"
+              to="settings"
             >
               <FontAwesomeIcon
                 icon={faGears}
                 className={styles.navbarLinkIcon}
               />
-              Setting
+              Settings
             </NavLink>
           </div>
         </div>
