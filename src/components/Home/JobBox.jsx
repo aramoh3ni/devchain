@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 const styles = {
-  jobBoxWrapper: `relative p-6 bg-white border-default border-gray-200 rounded-lg dark:bg-secondary dark:border-gray-700 hover:shadow-lg`,
+  jobBoxWrapper: `relative p-6 bg-white border-default border-gray-200 rounded-lg dark:bg-secondary dark:border-gray-700 hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:z-10 hover:scale-x-100`,
   jobBoxTitle: `mb-2 text-2xl font-bold tracking-tight text-gray-600 dark:text-white`,
   jobBoxText: `mb-3 font-normal text-gray-700 dark:text-gray-200`,
   jobBoxFooterWrapper: `flex justify-between items-end`,

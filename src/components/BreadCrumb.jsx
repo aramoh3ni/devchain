@@ -10,11 +10,12 @@ const Breadcrumb = ({ title }) => {
   return (
     <div>
       <nav
-        className=""
+        className="flex items-end justify-between"
         aria-label="Breadcrumb"
       >
         <Link to={`..`} relative="path" className=" font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-          <FontAwesomeIcon icon={faArrowLeft} className="w-4 h-4" />
+          <FontAwesomeIcon icon={faArrowLeft} className="w-4 h-4 mr-2" />
+          Back
         </Link>
   
         
