@@ -1,22 +1,54 @@
+import axios from "axios"
+import { useState, useEffect } from "react"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSearch, faArrowLeft } from "@fortawesome/free-solid-svg-icons"
+import { faSearch, faArrowLeft, faNotEqual } from "@fortawesome/free-solid-svg-icons"
+
+import {} from 'react-icons/fa'
+import { FcFinePrint } from 'react-icons/fc'
 
 import JobBox, { JobBoxSkelton } from "../../components/Home/JobBox"
-import { useJobs } from "../../hooks/useJobs"
 import Breadcrumb from "../../components/BreadCrumb"
 
 const JobPage = () => {
-  const { jobs } = useJobs()
+  const [jobs, setJobs] = useState([])
+  const [searchQuery, setSearchQuery] = useState("")
 
-  const skeleton = [1, 2, 3, 4, 5, 6].map(item => JobBoxSkelton)
+  const getJobs = async () => {
+    const res = await axios.get("/api/jobs")
+    if (res && res.data) {
+      setJobs(res.data.jobs)
+    }
+  }
+
+  const filterJobs = jobs && searchQuery.length > 0
+    ? jobs.filter(job =>
+        job.title.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : jobs
+
+  const handleSearch = e => {
+    e.preventDefault()
+  }
+
+  useEffect(() => {
+    getJobs()
+  }, [])
+
+  const skeleton = [1, 2, 3, 4, 5, 6].map(() => JobBoxSkelton)
+
+  const noJobBox = (<div className="flex items-center gap-3 p-3 bg-white border-default border-gray-200 rounded-lg dark:bg-secondary dark:border-gray-700 hover:shadow-lg select-none">
+    <FcFinePrint size={60} className="w-20 h-20" />
+    <h1 className="mb-2 text-2xl font-bold tracking-tight text-gray-600 dark:text-white w-80 overflow-hidden">No Job! : {searchQuery}</h1>
+  </div>)
 
   return (
     <div className="container m-auto mt-6">
       <Breadcrumb />
 
-      <form className="w-md mx-auto mt-10">
+      <form className="w-md mx-auto mt-10" onSubmit={e => handleSearch(e)}>
         <label
-          for="default-search"
+          htmlFor="default-search"
           className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
         >
           Search
@@ -30,6 +62,7 @@ const JobPage = () => {
             id="default-search"
             className="block w-full p-4 pl-10 text-sm border-none outline-none text-gray-900 rounded-lg bg-gray-50 dark:bg-secondary focus:bg-darker dark:placeholder-gray-400 dark:text-white  "
             placeholder="Search [Job title]"
+            onChange={e => setSearchQuery(e.target.value)}
             required
           />
           <button
@@ -43,9 +76,9 @@ const JobPage = () => {
 
       <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-secondary"></hr>
 
-      <div className="pb-6 grid grid-cols-3 gap-y-4 gap-x-2">
-        {jobs && jobs.length > 0
-          ? jobs?.map(job => (
+      <div className={`pb-6 grid grid-cols-3 gap-y-4 gap-x-2`}>
+        {filterJobs && filterJobs.length > 0
+          ? filterJobs?.map(job => (
               <JobBox
                 key={job._id}
                 isNew
@@ -54,7 +87,7 @@ const JobPage = () => {
                 timeSpan="4 hours ago" // TODO: it will change
               />
             ))
-          : skeleton}
+          : filterJobs.length === 0  && jobs.length ? noJobBox : skeleton}
       </div>
     </div>
   )
