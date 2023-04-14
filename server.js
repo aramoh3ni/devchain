@@ -7,7 +7,7 @@ createServer({
 
   seeds(server) {
     server.create("job", {
-      _id: "1",
+      id: "1",
       published: "3 hours ago",
       deadline: "3-March-2023",
       title: "React Developer",
@@ -16,7 +16,7 @@ createServer({
       company: "Tuts Tech",
     })
     server.create("job", {
-      _id: "2",
+      id: "2",
       published: "1 day ago",
       deadline: "3-March-2023",
       title: "Software Engineer",
@@ -25,7 +25,7 @@ createServer({
       company: "Netlinks Co",
     })
     server.create("job", {
-      _id: "3",
+      id: "3",
       published: "4 day ago",
       deadline: "3-March-2023",
       title: "UX/UI Designer",
@@ -34,7 +34,7 @@ createServer({
       company: "JFITSC.Co",
     })
     server.create("job", {
-      _id: "4",
+      id: "4",
       published: "1 day ago",
       deadline: "3-March-2023",
       title: "Data Analysis",
@@ -43,7 +43,7 @@ createServer({
       company: "MCIT",
     })
     server.create("job", {
-      _id: "10",
+      id: "10",
       published: "3 hours ago",
       deadline: "3-March-2023",
       title: "React Developer",
@@ -52,7 +52,7 @@ createServer({
       company: "Tuts Tech",
     })
     server.create("job", {
-      _id: "20",
+      id: "20",
       published: "1 day ago",
       deadline: "3-March-2023",
       title: "Software Engineer",
@@ -61,7 +61,7 @@ createServer({
       company: "Netlinks Co",
     })
     server.create("job", {
-      _id: "30",
+      id: "30",
       published: "4 day ago",
       deadline: "3-March-2023",
       title: "UX/UI Designer",
@@ -70,7 +70,7 @@ createServer({
       company: "JFITSC.Co",
     })
     server.create("job", {
-      _id: "40",
+      id: "40",
       published: "1 day ago",
       deadline: "3-March-2023",
       title: "Data Analysis",
@@ -79,7 +79,7 @@ createServer({
       company: "MCIT",
     })
     server.create("job", {
-      _id: "100",
+      id: "100",
       published: "3 hours ago",
       deadline: "3-March-2023",
       title: "React Developer",
@@ -88,7 +88,7 @@ createServer({
       company: "Tuts Tech",
     })
     server.create("job", {
-      _id: "200",
+      id: "200",
       published: "1 day ago",
       deadline: "3-March-2023",
       title: "Software Engineer",
@@ -97,7 +97,7 @@ createServer({
       company: "Netlinks Co",
     })
     server.create("job", {
-      _id: "300",
+      id: "300",
       published: "4 day ago",
       deadline: "3-March-2023",
       title: "UX/UI Designer",
@@ -106,7 +106,7 @@ createServer({
       company: "JFITSC.Co",
     })
     server.create("job", {
-      _id: "400",
+      id: "400",
       published: "1 day ago",
       deadline: "3-March-2023",
       title: "Data Analysis",
@@ -115,7 +115,7 @@ createServer({
       company: "MCIT",
     })
     server.create("job", {
-      _id: "1000",
+      id: "1000",
       published: "3 hours ago",
       deadline: "3-March-2023",
       title: "React Developer",
@@ -124,7 +124,7 @@ createServer({
       company: "Tuts Tech",
     })
     server.create("job", {
-      _id: "2000",
+      id: "2000",
       published: "1 day ago",
       deadline: "3-March-2023",
       title: "Software Engineer",
@@ -133,7 +133,7 @@ createServer({
       company: "Netlinks Co",
     })
     server.create("job", {
-      _id: "3000",
+      id: "3000",
       published: "4 day ago",
       deadline: "3-March-2023",
       title: "UX/UI Designer",
@@ -142,7 +142,7 @@ createServer({
       company: "JFITSC.Co",
     })
     server.create("job", {
-      _id: "4000",
+      id: "4000",
       published: "1 day ago",
       deadline: "3-March-2023",
       title: "Data Analysis",
@@ -151,7 +151,7 @@ createServer({
       company: "MCIT",
     })
     server.create("job", {
-      _id: "101",
+      id: "101",
       published: "3 hours ago",
       deadline: "3-March-2023",
       title: "React Developer",
@@ -160,7 +160,7 @@ createServer({
       company: "Tuts Tech",
     })
     server.create("job", {
-      _id: "211",
+      id: "211",
       published: "1 day ago",
       deadline: "3-March-2023",
       title: "Software Engineer",
@@ -169,7 +169,7 @@ createServer({
       company: "Netlinks Co",
     })
     server.create("job", {
-      _id: "311",
+      id: "311",
       published: "4 day ago",
       deadline: "3-March-2023",
       title: "UX/UI Designer",
@@ -178,7 +178,7 @@ createServer({
       company: "JFITSC.Co",
     })
     server.create("job", {
-      _id: "411",
+      id: "411",
       published: "1 day ago",
       deadline: "3-March-2023",
       title: "Data Analysis",
@@ -186,13 +186,12 @@ createServer({
         "Lorem ipsum dolor sit amen consectetur dang elite. Venite quibusdam sapient option laboriously, tenter.",
       company: "MCIT",
     })
-
   },
 
   routes() {
     this.namespace = "api"
     this.logging = false
-    this.timing = 1000
+    this.timing = 200
 
     this.get("/jobs", (schema, request) => {
       // return new Response(400, {}, { error: "Error fetching data" })
@@ -201,7 +200,7 @@ createServer({
 
     this.get("/jobs/:id", (schema, request) => {
       const id = request.params.id
-      return schema.jobs.find(id)
+      return schema.jobs.findBy({ id })
     })
 
     this.get("/jobs/details", (schema, request) => {

@@ -1,10 +1,7 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSearch, faArrowLeft, faNotEqual } from "@fortawesome/free-solid-svg-icons"
-
-import {} from 'react-icons/fa'
+import { FaSearch } from 'react-icons/fa'
 import { FcFinePrint } from 'react-icons/fc'
 
 import JobBox, { JobBoxSkelton } from "../../components/Home/JobBox"
@@ -55,7 +52,7 @@ const JobPage = () => {
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <FontAwesomeIcon icon={faSearch} className="font-semibold" />
+            <FaSearch className="font-semibold" />
           </div>
           <input
             type="search"
@@ -80,7 +77,8 @@ const JobPage = () => {
         {filterJobs && filterJobs.length > 0
           ? filterJobs?.map(job => (
               <JobBox
-                key={job._id}
+                id={job.id}
+                key={job.id}
                 isNew
                 title={job.title}
                 text={job.description}

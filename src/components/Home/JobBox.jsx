@@ -17,14 +17,15 @@ const styles = {
   jobBoxBadge: `absolute inline-flex items-center justify-center w-auto h-6 px-2 text-xs font-bold text-white bg-red-500 border-default border-white rounded-full -top-3 right-3 dark:border-gray-600`,
 }
 
-const JobBox = ({ title, text, timeSpan, isNew }) => {
+const JobBox = ({ id, title, text, timeSpan, isNew }) => {
   // TODO:: create url path for title
   // ? TEMP URL
   // TODO:: create New Badge if job.publish is not more then 1 day.
   // TODO:: create Expired Badge if job.deadline is outdate.
   // TODO:: create Organization Logo that should at the top of JobBox Component
 
-  const url = title.toLowerCase().replace(" ", "-")
+  // const url = title.toLowerCase().replace(" ", "-")
+  const url = id
 
   return (
     <div className={styles.jobBoxWrapper}>
