@@ -4,7 +4,8 @@ import { Outlet, useParams } from "react-router"
 import JobBox, { JobBoxSkelton } from "../../components/Home/JobBox"
 import Breadcrumb from "../../components/BreadCrumb"
 
-import { BiTimeFive, BiTaskX, BiMap } from "react-icons/bi"
+import { BiTimeFive, BiTaskX, BiMap, BiHash, BiGroup } from "react-icons/bi"
+import { FaUniversity } from "react-icons/fa"
 import { NavLink } from "react-router-dom"
 
 const JobDetail = () => {
@@ -40,12 +41,12 @@ const JobDetail = () => {
   const styles = {
     jobDetailWrapper: `container mx-auto min-h-[75vh] mt-6`,
     jobDetailContainer: `flex gap-4`,
-    jobDetailSidebar: `flex-initial w-sm space-y-5 py-4`,
+    jobDetailSidebar: `flex-initial w-sm space-y-5`,
     jobDetailSidebarTitle: `text-lg font-body`,
-    jobDetailBodyContainer: `flex-auto mt-16`,
+    jobDetailBodyContainer: `flex-auto w-40`,
     jobDetailBodyTitle: `flex items-start justify-between text-4xl font-bold mb-4`,
     jobDetailBodyTitleButton: `text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700`,
-    jobDetailBodyContent: `font-light text-gray-500 dark:text-gray-400 py-4`,
+    jobDetailBodyContent: `font-light text-gray-300 dark:text-gray-200 py-4`,
     jobDetailBodyContentTitle: `font-medium text-lg text-white`,
     jobDetailList: `max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-300 font-medium`,
     jobDetailListItem: `flex items-center`,
@@ -60,9 +61,9 @@ const JobDetail = () => {
 
   return (
     <div className={styles.jobDetailWrapper}>
-      <Breadcrumb />
       <div className={styles.jobDetailContainer}>
         <div className={styles.jobDetailSidebar}>
+          <Breadcrumb />
           <h3 className={styles.jobDetailSidebarTitle}>Related Jobs</h3>
           {relatedJobs && relatedJobs.length > 0
             ? relatedJobs?.map(job => (
@@ -95,6 +96,10 @@ const JobDetail = () => {
               20/DEC/2023
             </li>
             <li className={styles.jobDetailListItem}>
+              <BiHash className={styles.jobDetailListItemIcon} />
+              {job?.vcNumber ?? "N/A"}
+            </li>
+            <li className={styles.jobDetailListItem}>
               <BiMap className={styles.jobDetailListItemIcon} />
               Kart-e-Say, Kabul, Afghanistan
             </li>
@@ -102,7 +107,7 @@ const JobDetail = () => {
 
           <p className={styles.jobDetailBodyContent}>
             <strong className={styles.jobDetailBodyContentTitle}>
-              Job Description
+              Description
             </strong>
             <br />
             {job?.description}
@@ -112,7 +117,8 @@ const JobDetail = () => {
             <ul className={styles.jobDetailTabList}>
               <li className={styles.jobDetailTabListItem}>
                 <NavLink
-                  to="info"
+                  to=""
+                  end
                   className={({ isActive }) =>
                     isActive
                       ? styles.jobDetailTabListItemLinkActive
